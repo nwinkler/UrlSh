@@ -21,6 +21,15 @@ exports.retrieve = function(req, res){
  */
 
 exports.post = function(req, res){
-  var id = req.params.id;
-  res.send('respond with a resource for id ' + id);
+  var newShortcutUrl = req.body.url;
+
+  if (newShortcutUrl) {
+    res.json({
+      url: newShortcutUrl,
+      shortcut: '1234'
+    });
+  }
+  else {
+    res.send(422, { errors: { url: ['Empty URL not allowed.'] }});
+  }
 };

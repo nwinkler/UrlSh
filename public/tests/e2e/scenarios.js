@@ -27,4 +27,25 @@ describe('Shortcuts', function() {
       expect(element('#linkedUrl a').attr('href')).toBe(link);
     });
   });
+
+  describe('Create', function() {
+    it('should not create a shortcut when no URL was entered', function() {
+      input('newShortcutUrl').enter('');
+      element('#create').click();
+
+      expect(element('#shortcut a').text()).toBe('');
+      expect(element('#shortcut a').attr('href')).toBe('');
+    });
+
+    it('should retrieve a link when a shortcut was entered', function() {
+      var link = 'http://www.google.com';
+      var shortcut = '1234';
+
+      input('newShortcutUrl').enter(link);
+      element('#create').click();
+
+      expect(element('#shortcut a').text()).toBe(shortcut);
+      expect(element('#shortcut a').attr('href')).toBe(shortcut);
+    });
+  });
 });

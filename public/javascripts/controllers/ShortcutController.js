@@ -5,6 +5,10 @@ function ShortcutController($scope, $resource) {
   $scope.newShortcut = {};
 
   $scope.addNewShortcut = function() {
+    var newShortcut = new Shortcut({ url: $scope.newShortcutUrl });
+    newShortcut.$save();
+
+    $scope.newShortcut = newShortcut;
   };
 
   $scope.existingShortcutId = '';
