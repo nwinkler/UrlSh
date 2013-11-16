@@ -9,9 +9,11 @@ block content
     p Welcome to #{title}
 
     form(novalidate, ng-submit="addNewUrl()")
-      input(ng-model="newUrl.url", placeholder="URL")
-      br
-      button.btn.btn-primary(type="submit") Add URL
+      p
+        input(ng-model="newUrl.url", placeholder="URL")
+
+      p
+        button.btn.btn-primary(type="submit") Add URL
 
     div(ng-if="newUrl.short")
       {{newUrl.short}}
