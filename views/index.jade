@@ -12,3 +12,6 @@ block content
       input(ng-model="newUrl.url", placeholder="URL")
       br
       button.btn.btn-primary(type="submit") Add URL
+
+    div(ng-if="newUrl.short")
+      {{newUrl.short}}
