@@ -10,24 +10,24 @@ block content
 
     section
       h2 Create a new shortcut
-      form(novalidate, ng-submit="addNewUrl()")
+      form(novalidate, ng-submit="addNewShortcut()")
         p
-          input(ng-model="newUrl.url", placeholder="URL")
+          input(ng-model="newShortcutUrl", placeholder="URL")
 
         p
           button.btn.btn-primary(type="submit") Add URL
 
         p= 'Shortcut: '
-          a(href="{{newUrl.id}}") {{newUrl.id}}
+          a(href="{{newShortcut.shortcut}}") {{newShortcut.shortcut}}
 
     section
       h2 Retrieve a shortcut
-      form(novalidate ng-submit="retrieveUrl()")
+      form(novalidate ng-submit="retrieveShortcut()")
         p
-          input(ng-model="existingUrlId", placeholder="Shortcut")
+          input(ng-model="existingShortcutId", placeholder="Shortcut")
 
         p
-          button.btn.btn.primary(type="submit") Retrieve URL
+          button.btn.btn.primary(type="submit") Retrieve Shortcut
 
         p= 'Linked URL: '
-          a(href="{{existingUrl.url}}") {{existingUrl.url}}
+          a(href="{{existingShortcut.url}}") {{existingShortcut.url}}

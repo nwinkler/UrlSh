@@ -1,25 +1,16 @@
 function UrlController($scope, $resource) {
-  var Url = $resource('/url/:urlId', { urlId: '@id' });
+  var Url = $resource('/url/:urlId');
 
-  $scope.newUrl = {
-    url : '',
-    id: ''
+  $scope.newShortcutUrl = '';
+  $scope.newShortcut = {};
+
+  $scope.addNewShortcut = function() {
   };
 
-  $scope.addNewUrl = function() {
-    $scope.newUrl.id = 'foo';
-/*
-    $http.post('/todo.json', $scope.newTodo).success(function(data) {
-      $scope.todos = data.todos;
-      $scope.newTodo.description = '';
-    });
-*/
-  };
+  $scope.existingShortcutId = '';
+  $scope.existingShortcut = {};
 
-  $scope.existingUrlId = '';
-  $scope.existingUrl = {};
-
-  $scope.retrieveUrl = function() {
-    $scope.existingUrl = Url.get({ urlId: $scope.existingUrlId });
+  $scope.retrieveShortcut = function() {
+    $scope.existingShortcut = Url.get({ urlId: $scope.existingShortcutId });
   };
 }
