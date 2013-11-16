@@ -18,13 +18,13 @@ block content
           button.btn.btn-primary(type="submit") Add URL
 
         p= 'Shortcut: '
-          a(href="{{newUrl.short}}") {{newUrl.short}}
+          a(href="{{newUrl.id}}") {{newUrl.id}}
 
     section
       h2 Retrieve a shortcut
       form(novalidate ng-submit="retrieveUrl()")
         p
-          input(ng-model="existingUrl.short", placeholder="Shortcut")
+          input(ng-model="existingUrl.id", placeholder="Shortcut")
 
         p
           button.btn.btn.primary(type="submit") Retrieve URL

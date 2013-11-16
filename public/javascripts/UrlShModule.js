@@ -1,1 +1,1 @@
-angular.module('UrlShModule', []);
+angular.module('UrlShModule', ['ngResource']);

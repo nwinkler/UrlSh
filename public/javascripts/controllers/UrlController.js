@@ -1,11 +1,13 @@
-function UrlController($scope, $http) {
+function UrlController($scope, $resource) {
+  var Url = $resource('/url/:urlId', { urlId: '@id' });
+
   $scope.newUrl = {
     url : '',
-    short: ''
+    id: ''
   };
 
   $scope.addNewUrl = function() {
-    $scope.newUrl.short = 'foo';
+    $scope.newUrl.id = 'foo';
 /*
     $http.post('/todo.json', $scope.newTodo).success(function(data) {
       $scope.todos = data.todos;
@@ -16,10 +18,11 @@ function UrlController($scope, $http) {
 
   $scope.existingUrl = {
     url: '',
-    short: ''
+    id: ''
   };
 
   $scope.retrieveUrl = function() {
     $scope.existingUrl.url = 'bar';
+
   };
 }
