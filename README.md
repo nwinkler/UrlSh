@@ -22,4 +22,4 @@ brew install mongodb
 npm start
 ```
 
-Open browser at http://localhost:3000
+Open browser [here](http://localhost:3000)
