@@ -8,6 +8,7 @@ var routes = require('./routes');
 var shortcut = require('./routes/shortcut');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
 
 var app = express();
 
@@ -30,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+mongoose.connect('mongodb://localhost/urlsh');
 
 app.get('/', routes.index);
 app.get('/:id', shortcut.get);

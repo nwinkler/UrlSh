@@ -3,6 +3,9 @@
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
 describe('Shortcuts', function() {
+  var testShortcut = 'TEST_SHORTCUT';
+  var testUrl = 'http://test.urlsh/test';
+
   beforeEach(function() {
     browser().navigateTo('/');
     sleep(1);
@@ -18,13 +21,11 @@ describe('Shortcuts', function() {
     });
 
     it('should retrieve a link when a shortcut was entered', function() {
-      var link = 'http://www.google.com';
-
-      input('existingShortcutId').enter('1234');
+      input('existingShortcutId').enter(testShortcut);
       element('#retrieve').click();
 
-      expect(element('#linkedUrl a').text()).toBe(link);
-      expect(element('#linkedUrl a').attr('href')).toBe(link);
+      expect(element('#linkedUrl a').text()).toBe(testUrl);
+      expect(element('#linkedUrl a').attr('href')).toBe(testUrl);
     });
   });
 
@@ -37,11 +38,10 @@ describe('Shortcuts', function() {
       expect(element('#shortcut a').attr('href')).toBe('');
     });
 
-    it('should retrieve a link when a shortcut was entered', function() {
-      var link = 'http://www.google.com';
+    it('should create a shortcut when a URL was entered', function() {
       var shortcut = '1234';
 
-      input('newShortcutUrl').enter(link);
+      input('newShortcutUrl').enter(testUrl);
       element('#create').click();
 
       expect(element('#shortcut a').text()).toBe(shortcut);
