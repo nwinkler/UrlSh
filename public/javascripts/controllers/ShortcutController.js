@@ -1,4 +1,4 @@
-function UrlController($scope, $resource) {
+function ShortcutController($scope, $resource) {
   var Url = $resource('/url/:urlId');
 
   $scope.newShortcutUrl = '';

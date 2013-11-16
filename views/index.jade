@@ -1,10 +1,10 @@
 extends layout
 
 block head
-  script(type='text/javascript', src='/javascripts/controllers/UrlController.js')
+  script(type='text/javascript', src='/javascripts/controllers/ShortcutController.js')
 
 block content
-  div.container(ng-controller="UrlController")
+  div.container(ng-controller="ShortcutController")
     h1= title
     p Welcome to #{title}
 
