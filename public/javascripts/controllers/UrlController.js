@@ -16,13 +16,10 @@ function UrlController($scope, $resource) {
 */
   };
 
-  $scope.existingUrl = {
-    url: '',
-    id: ''
-  };
+  $scope.existingUrlId = '';
+  $scope.existingUrl = {};
 
   $scope.retrieveUrl = function() {
-    $scope.existingUrl.url = 'bar';
-
+    $scope.existingUrl = Url.get({ urlId: $scope.existingUrlId });
   };
 }

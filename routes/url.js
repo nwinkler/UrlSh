@@ -12,7 +12,7 @@ exports.retrieve = function(req, res){
   var id = req.params.id;
   res.json({
     url: 'http://www.google.com',
-    short: id
+    shortcut: id
   });
 };
 
