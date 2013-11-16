@@ -15,10 +15,11 @@ block content
           input(ng-model="newShortcutUrl", placeholder="URL")
 
         p
-          button.btn.btn-primary(type="submit") Add URL
+          button.btn.btn-primary(type="submit", id="add") Add URL
 
-        p= 'Shortcut: '
-          a(href="{{newShortcut.shortcut}}") {{newShortcut.shortcut}}
+        div(id="shortcut")
+          p= 'Shortcut: '
+            a(href="{{newShortcut.shortcut}}") {{newShortcut.shortcut}}
 
     section
       h2 Retrieve a shortcut
@@ -27,7 +28,8 @@ block content
           input(ng-model="existingShortcutId", placeholder="Shortcut")
 
         p
-          button.btn.btn.primary(type="submit") Retrieve Shortcut
+          button.btn.btn.primary(type="submit", id="retrieve") Retrieve Shortcut
 
-        p= 'Linked URL: '
-          a(href="{{existingShortcut.url}}") {{existingShortcut.url}}
+        div(id="linkedUrl")
+          p= 'Linked URL: '
+            a(href="{{existingShortcut.url}}") {{existingShortcut.url}}
