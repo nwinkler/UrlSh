@@ -1,5 +1,14 @@
 extends layout
 
+block head
+  script(type='text/javascript', src='/javascripts/controllers/AddUrlController.js')
+
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container(ng-controller="AddUrlController")
+    h1= title
+    p Welcome to #{title}
+
+    form(novalidate, ng-submit="addNewUrl()")
+      input(ng-model="newUrl.url", placeholder="URL")
+      br
+      button.btn.btn-primary(type="submit") Add URL
