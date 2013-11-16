@@ -1,20 +1,33 @@
 extends layout
 
 block head
-  script(type='text/javascript', src='/javascripts/controllers/AddUrlController.js')
+  script(type='text/javascript', src='/javascripts/controllers/UrlController.js')
 
 block content
-  div.container(ng-controller="AddUrlController")
+  div.container(ng-controller="UrlController")
     h1= title
     p Welcome to #{title}
 
-    form(novalidate, ng-submit="addNewUrl()")
-      p
-        input(ng-model="newUrl.url", placeholder="URL")
+    section
+      h2 Create a new shortcut
+      form(novalidate, ng-submit="addNewUrl()")
+        p
+          input(ng-model="newUrl.url", placeholder="URL")
 
-      p
-        button.btn.btn-primary(type="submit") Add URL
+        p
+          button.btn.btn-primary(type="submit") Add URL
 
-    div(ng-if="newUrl.short")
-      p Short URL:
-        a(href="{{newUrl.short}}") {{newUrl.short}}
+        p= 'Short URL: '
+          a(href="{{newUrl.short}}") {{newUrl.short}}
+
+    section
+      h2 Retrieve a shortcut
+      form(novalidate ng-submit="retrieveUrl()")
+        p
+          input(ng-model="existingUrl.short", placeholder="Shortcut")
+
+        p
+          button.btn.btn.primary(type="submit") Retrieve URL
+
+        p= 'Linked URL: '
+          a(href="{{existingUrl.url}}") {{existingUrl.url}}

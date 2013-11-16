@@ -1,4 +1,4 @@
-function AddUrlController($scope, $http) {
+function UrlController($scope, $http) {
   $scope.newUrl = {
     url : '',
     short: ''
@@ -12,5 +12,14 @@ function AddUrlController($scope, $http) {
       $scope.newTodo.description = '';
     });
 */
+  };
+
+  $scope.existingUrl = {
+    url: '',
+    short: ''
+  };
+
+  $scope.retrieveUrl = function() {
+    $scope.existingUrl.url = 'bar';
   };
 }
