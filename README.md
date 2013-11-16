@@ -19,6 +19,7 @@ brew install mongodb
 ## Running
 
 ```
+npm run-script mongod
 npm start
 ```
 
