@@ -1,5 +1,5 @@
 function ShortcutController($scope, $resource) {
-  var Url = $resource('/url/:urlId');
+  var Shortcut = $resource('/shortcut/:shortcutId');
 
   $scope.newShortcutUrl = '';
   $scope.newShortcut = {};
@@ -11,6 +11,6 @@ function ShortcutController($scope, $resource) {
   $scope.existingShortcut = {};
 
   $scope.retrieveShortcut = function() {
-    $scope.existingShortcut = Url.get({ urlId: $scope.existingShortcutId });
+    $scope.existingShortcut = Shortcut.get({ shortcutId: $scope.existingShortcutId });
   };
 }

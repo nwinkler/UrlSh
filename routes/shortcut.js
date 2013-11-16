@@ -1,6 +1,6 @@
 
 /*
- * GET a URL.
+ * GET a Shortcut.
  */
 
 exports.get = function(req, res){
@@ -17,7 +17,7 @@ exports.retrieve = function(req, res){
 };
 
 /*
- * POST a new URL.
+ * POST a new Shortcut.
  */
 
 exports.post = function(req, res){

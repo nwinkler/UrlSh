@@ -5,7 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
-var url = require('./routes/url');
+var shortcut = require('./routes/shortcut');
 var http = require('http');
 var path = require('path');
 
@@ -32,9 +32,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/:id', url.get);
-app.get('/url/:id', url.retrieve);
-app.post('/url', url.post);
+app.get('/:id', shortcut.get);
+app.get('/shortcut/:id', shortcut.retrieve);
+app.post('/shortcut', shortcut.post);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
