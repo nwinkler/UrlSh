@@ -1,4 +1,5 @@
 node_modules
-public/stylesheets/style.css
-public/javascripts/vendor
+app/styles/style.css
+app/bower_components
 data
+.tmp

@@ -12,7 +12,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "public/javascripts/vendor",
+    "app/bower_components",
     "test",
     "tests"
   ],
@@ -20,7 +20,10 @@
     "angular": "1.2.1",
     "angular-resource": "1.2.1",
     "bootstrap-css": "~3.0.0",
-    "bootstrap-javascript": "~2.3.2",
+    "bootstrap-javascript": "~2.3.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.1",
     "angular-scenario": "~1.2.1"
   }
 }
